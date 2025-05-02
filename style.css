@@ -1,0 +1,129 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #2d3436;
+    --card-bg: #f8f9fa;
+    --accent: #0984e3;
+    --hover: #74b9ff;
+}
+
+[data-theme="dark"] {
+    --bg-color: #2d3436;
+    --text-color: #dfe6e9;
+    --card-bg: #3c4245;
+    --accent: #6c5ce7;
+    --hover: #a8a5e6;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+    transition: all 0.3s;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.photo-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.hidden-photo {
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s;
+    position: absolute;
+    top: 30px;
+    left: 0;
+}
+
+.hidden-photo.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.arrow {
+    font-size: 1.5rem;
+    color: var(--accent);
+}
+
+header {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.controls {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.month-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.month-card:hover {
+    transform: translateY(-5px);
+}
+
+.month-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
+.day {
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+    background: rgba(0,0,0,0.1);
+    transition: all 0.2s;
+}
+
+.day:hover {
+    background: var(--hover);
+    transform: scale(1.1);
+}
+
+.btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 3px;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
